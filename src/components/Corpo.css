@@ -1,0 +1,65 @@
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Georgia', serif;
+    line-height: 1.8;
+    color: #333;
+}
+
+main p {
+    font-size: 1.1rem;
+    text-align: justify;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 10px;
+    border-left: 4px solid #4a7c59;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+
+
+main img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+    border: 3px solid #4a7c59;
+    transition: all 0.3s ease;
+}
+
+main img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+main::before {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, #2c5530, #4a7c59);
+    margin: 0 auto 2rem auto;
+    border-radius: 2px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem;
+    }
+    
+    main p {
+        font-size: 1rem;
+        padding: 1rem;
+        text-align: left;
+    }
+    
+    main p::first-letter {
+        font-size: 2rem;
+    }
+}

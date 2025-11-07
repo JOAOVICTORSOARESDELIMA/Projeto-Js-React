@@ -1,0 +1,53 @@
+header {
+    background: linear-gradient(135deg, #2c5530, #4a7c59);
+    color: white;
+    text-align: center;
+    padding: 45px;
+    margin-bottom: 40px;
+    position:relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><text x="50" y="50" font-family="Arial" font-size="10" text-anchor="middle" fill="white"></text></svg>') repeat;
+}
+
+header h1 {
+    font-family: 'Georgia', serif;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+header p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    opacity: 0.9;
+    position: relative;
+}
+
+header::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    animation: brilho 6s infinite linear;
+}
+
+@keyframes brilho {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
