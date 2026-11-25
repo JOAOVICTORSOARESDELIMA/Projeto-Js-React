@@ -1,14 +1,14 @@
 import Cabecalho from "./components/Cabecalho";
 import Corpo from "./components/Corpo";
 import Rodape from "./components/Rodape";
-import './App.css'
+import { site, introducao, pontosTuristicos, contato } from "./data/conteudo";
 
 export default function App() {
-return (
-<div>
-<Cabecalho/>
-<Corpo/>
-<Rodape/>
-</div>
-);
+  return (
+    <>
+      <Cabecalho titulo={site.titulo} subtitulo={site.subtitulo} />
+      <Corpo paragrafos={introducao} pontos={pontosTuristicos} />
+      <Rodape email={contato.email} redes={contato.redes} />
+    </>
+  );
 }

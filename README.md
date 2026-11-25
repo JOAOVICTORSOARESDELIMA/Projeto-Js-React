@@ -1,16 +1,61 @@
-# React + Vite
+[![CI](https://github.com/JOAOVICTORSOARESDELIMA/Projeto-Js-React/actions/workflows/ci.yml/badge.svg)](https://github.com/JOAOVICTORSOARESDELIMA/Projeto-Js-React/actions/workflows/ci.yml)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Centro Histórico de João Pessoa: site em React
 
-Currently, two official plugins are available:
+Avaliação da disciplina de **Tecnologia para Front-end Avançado** do curso de Sistemas para Internet (UNIESP, 2025.2). É uma página sobre o Centro Histórico de João Pessoa, construída com **React** e **Vite** e dividida em componentes reutilizáveis.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![Prévia do site](docs/preview.jpg)
 
-## React Compiler
+## O que o projeto mostra
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Componentes funcionais** com responsabilidade única: `Cabecalho`, `Corpo`, `PontoTuristico` e `Rodape`
+- **Props**: os componentes não têm texto fixo e recebem o conteúdo de quem os usa
+- **Renderização de listas** com `.map()` e `key` (parágrafos, pontos turísticos e redes sociais)
+- **Conteúdo separado da interface** em `src/data/conteudo.js`. Para trocar um texto, não precisa mexer no JSX.
+- **CSS por componente**, com variáveis de cor e fonte em `index.css`
+- Layout **responsivo** (grid que se adapta à tela, título com `clamp()`)
+- **Acessibilidade**: idioma `pt-BR`, texto alternativo na imagem, `<figure>`/`<figcaption>`, foco visível nos links e animações desligadas para quem prefere menos movimento
+- Links externos com `rel="noopener noreferrer"`
 
-## Expanding the ESLint configuration
+## Como executar
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Requisitos: **Node.js 20 ou mais recente**.
+
+```bash
+npm install
+npm run dev       # servidor de desenvolvimento em http://localhost:5173
+npm run build     # gera a versão de produção em dist/
+npm run lint      # verifica o código com ESLint
+```
+
+## Estrutura
+
+```
+src/
+├── main.jsx                  # monta o React na página
+├── App.jsx                   # junta os componentes e passa o conteúdo por props
+├── index.css                 # estilos globais e variáveis de tema
+├── data/conteudo.js          # textos, pontos turísticos e contatos
+├── assets/centro-historico.jpg
+└── components/
+    ├── Cabecalho.jsx / .css
+    ├── Corpo.jsx / .css
+    ├── PontoTuristico.jsx / .css
+    └── Rodape.jsx / .css
+```
+
+## O que mudou em relação à versão entregue
+
+- Os textos saíram de dentro dos componentes e foram para `conteudo.js`. Os componentes passaram a receber tudo por props.
+- Nova seção **Destaques do centro**, com cards gerados a partir de uma lista.
+- Foram removidos os estilos que sobraram do modelo do Vite (fundo escuro e `body` centralizado), que brigavam com o layout.
+- O nome do projeto no `package.json`, o título da aba e o idioma da página foram corrigidos.
+- Foi adicionado CI no GitHub Actions (lint + build a cada push).
+
+## Autor
+
+**João Victor Soares de Lima**: [GitHub](https://github.com/JOAOVICTORSOARESDELIMA)
+
+## Licença
+
+Código sob [MIT](LICENSE). A foto em `src/assets` é usada só como ilustração acadêmica.
